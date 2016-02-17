@@ -96,7 +96,6 @@ function createBall() {
       ctx.fill();
       ctx.closePath();
     }
-
   }
 
   balls.push(ball);
@@ -123,7 +122,6 @@ function render() {
       //out of screen
       floor.sizeX -= balls.length;
       balls.splice(b,1);
-
     }
 
     /* floor collision */
