@@ -7,16 +7,14 @@ var centerY = window.innerHeight / 2;
 
 var balls = [];
 var ball;
-
 var floor;
-var loseBalls = 0;
+
 var record;
 
-
-if(window.localStorage.getItem("record") !== null) {
-  window.localStorage.setItem("record", record);
+if(window.localStorage.getItem("record") !== "undefined") {
+  record = window.localStorage.getItem("record");
 } else {
-   record = 0;
+  record = 0;
 } 
 
 function randomRange(min,max) {
@@ -123,7 +121,6 @@ function render() {
 
     if(balls[b].posY > canvasY) {
       //out of screen
-      loseBalls += 1;
       floor.sizeX = floor.sizeX + balls.length;
       balls.splice(b,1);
 
@@ -146,6 +143,7 @@ function render() {
   total = balls.length
   if(total >= record) {
     record = total;
+    window.localStorage.setItem("record", record);
   }
 
 }
