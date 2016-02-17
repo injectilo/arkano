@@ -75,7 +75,7 @@ function createFloor() {
 
 function floorMove(evt) {
   if((evt.clientX ) < (canvasX)) {
-    floor.posX = evt.clientX;
+    floor.posX = (evt.clientX - (floor.sizeX / 2));
   }
 }
 
