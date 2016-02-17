@@ -45,7 +45,7 @@ function text() {
   ctx.textAlign = 'left';
   ctx.fillStyle = "white";
   ctx.font="1vw 'Press Start 2P'";
-  ctx.fillText("Record " + record, 10, 50); 
+  ctx.fillText("Record " + record, 10, 40); 
   ctx.fill();
   /* actual score */
   ctx.textAlign = 'center';
