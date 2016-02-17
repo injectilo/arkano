@@ -57,7 +57,7 @@ function text() {
 
 function createFloor() {
   floor = {
-    sizeX : 300,
+    sizeX : 200,
     sizeY : 20,
     posX : 300,
     posY : (canvasY -100),
@@ -121,7 +121,7 @@ function render() {
 
     if(balls[b].posY > canvasY) {
       //out of screen
-      floor.sizeX = floor.sizeX + balls.length;
+      floor.sizeX -= balls.length;
       balls.splice(b,1);
 
     }
@@ -130,8 +130,8 @@ function render() {
     if(balls[b].posX > floor.posX && balls[b].posX < (floor.posX + floor.sizeX) && balls[b].posY > floor.posY && (balls[b].posY - 10) < (floor.posY) ) {
       balls[b].velocityY *= -1;
       createBall();
-      if(floor.sizeX > 100) {
-        floor.sizeX = floor.sizeX - balls.length;
+      if(floor.sizeX < 600) {
+        floor.sizeX +=  balls.length;
       }
       
     }
