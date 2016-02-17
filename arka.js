@@ -120,7 +120,9 @@ function render() {
 
     if(balls[b].posY > canvasY) {
       //out of screen
-      floor.sizeX -= balls.length;
+      if(floor.sizeX > 100) {
+        floor.sizeX -= balls.length;
+      }
       balls.splice(b,1);
     }
 
